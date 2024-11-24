@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Actor } from '../actor';
+import { Actor } from '../../../Models/actor';
+// import { Actor } from '../actor';
 @Component({
   selector: 'app-actor-form',
   templateUrl: './actor-form.component.html',
-  standalone: false,
+  standalone: true,
 })
 export class ActorFormComponent {
   skills = ['Method Acting', 'Singing', 'Dancing', 'Swordfighting'];

@@ -26,7 +26,7 @@ export const APP_ROUTES: Routes = [
         loadComponent: () =>
           import(
             './pages/template-driven-form/template-driven-form.component'
-          ).then((c) => c.HighVolumeScanningComponent),
+          ).then((c) => c.TemplateDrivenFormComponent),
       },
       // {
       //   path: 'asset-search',
