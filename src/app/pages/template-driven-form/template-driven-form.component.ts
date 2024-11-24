@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ActorFormComponent } from './actor-form/actor-form.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-template-driven-form',
   standalone: true,
-  imports: [ActorFormComponent],
+  imports: [ActorFormComponent, BrowserModule, CommonModule, FormsModule],
   templateUrl: './template-driven-form.component.html',
   styleUrl: './template-driven-form.component.css',
 })

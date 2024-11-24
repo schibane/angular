@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { Actor } from '../../../Models/actor';
-// import { Actor } from '../actor';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-actor-form',
   templateUrl: './actor-form.component.html',
   standalone: true,
+  imports: [BrowserModule, CommonModule, FormsModule],
 })
 export class ActorFormComponent {
   skills = ['Method Acting', 'Singing', 'Dancing', 'Swordfighting'];
