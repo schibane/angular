@@ -66,8 +66,8 @@
               [disabled]="!usernameValue || !passwordValue || isLoginLoading"
               (click)="login()"
             >
-              <app-spiner class="ml-2" [hidden]="!isLoginLoading"></app-spiner
-              >{{ "LoginAction" | translate }}
+              <!-- <app-spiner class="ml-2" [hidden]="!isLoginLoading"></app-spiner> -->
+              {{ "LoginAction" | translate }}
             </button>
           </div>
         </div>

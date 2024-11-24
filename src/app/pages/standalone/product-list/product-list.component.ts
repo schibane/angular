@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TableModule } from 'primeng/table';
-import { Product } from '../Models/product';
+// import { Product } from '../Models/product';
 import { ProductService } from './product.service';
 import { Subscription } from 'rxjs';
+import { Product } from '../../../Models/product';
 
 @Component({
   selector: 'app-product-list',

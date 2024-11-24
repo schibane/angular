@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { LoginService } from './login.service';
-import { MessageService } from 'primeng/api';
-import { TokenRequestOutput } from 'src/app/models/apis/outputs/token-request.output';
-import { UserInfoOutput } from 'src/app/models/UserInfoOutput';
-import { PrimengToastService } from 'src/app/shared/services/primeng-toast.service';
-import { CacheParams } from 'src/app/models/enums';
-import { SpinerComponent } from 'src/app/shared/components/spiner/spiner.component';
+// import { MessageService } from 'primeng/api';
+// import { TokenRequestOutput } from 'src/app/models/apis/outputs/token-request.output';
+// import { UserInfoOutput } from 'src/app/models/UserInfoOutput';
+// import { PrimengToastService } from 'src/app/shared/services/primeng-toast.service';
+// import { CacheParams } from 'src/app/models/enums';
+// import { SpinerComponent } from 'src/app/shared/components/spiner/spiner.component';
 import { ToastModule } from 'primeng/toast';
 
 @Component({
@@ -25,10 +25,10 @@ import { ToastModule } from 'primeng/toast';
     InputTextModule,
     CommonModule,
     TranslateModule,
-    SpinerComponent,
+    // SpinerComponent,
     ToastModule,
   ],
-  providers: [PrimengToastService],
+  // providers: [PrimengToastService],
 })
 export class LoginComponent {
   usernameValue = '';
@@ -40,10 +40,10 @@ export class LoginComponent {
 
   constructor(
     private loginService: LoginService,
-    private router: Router,
-    private toastService: PrimengToastService,
-    private messageService: MessageService
-  ) {}
+    private router: Router
+  ) // private toastService: PrimengToastService,
+  // private messageService: MessageService
+  {}
 
   login() {
     if (this.usernameValue && this.passwordValue && !this.isLoginLoading) {
@@ -54,7 +54,7 @@ export class LoginComponent {
 
   private getTokenRequest(username: string, password: string) {
     this.loginService.getTokenRequest(username, password).subscribe({
-      next: (tokenRequestOutput: TokenRequestOutput) => {
+      next: (tokenRequestOutput: any) => {
         if (tokenRequestOutput.userInfo && tokenRequestOutput.userInfo.token) {
           this.loginSuccess(tokenRequestOutput.userInfo);
         } else {
@@ -67,16 +67,16 @@ export class LoginComponent {
     });
   }
 
-  private loginSuccess(userInfo: UserInfoOutput) {
+  private loginSuccess(userInfo: any) {
     this.loginService.setUserInfoStorage(userInfo, this.passwordValue);
     // sessionStorage.setItem('email', 'email as string');
-    localStorage.setItem(CacheParams.token, userInfo.token);
-    this.toastService.showToast(
-      'success',
-      'SuccessToastTitle',
-      'LoginSuccess',
-      false
-    );
+    // localStorage.setItem(CacheParams.token, userInfo.token);
+    // this.toastService.showToast(
+    //   'success',
+    //   'SuccessToastTitle',
+    //   'LoginSuccess',
+    //   false
+    // );
     this.router.navigate(['']);
   }
 
@@ -84,12 +84,12 @@ export class LoginComponent {
     this.isLoginLoading = false;
     this.usernameValue = '';
     this.passwordValue = '';
-    this.toastService.showToast(
-      'error',
-      'ErrorToastTitle',
-      error,
-      skipTranslation
-    );
+    // this.toastService.showToast(
+    //   'error',
+    //   'ErrorToastTitle',
+    //   error,
+    //   skipTranslation
+    // );
     setTimeout(() => {
       this.usernameInput?.nativeElement.focus();
     });

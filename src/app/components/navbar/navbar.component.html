@@ -1,0 +1,84 @@
+<nav class="topbar-right w-100">
+  <ul class="topbar-menu list-none">
+    <li class="push-left">
+      <img src="assets/images/gildan-logo.svg" alt="company-logo" />
+    </li>
+    <li>
+      <a routerLink="">{{ "linkHomeKey" | translate }}</a>
+    </li>
+    <li>
+      <a routerLink="inventory">{{ "linkInventoryKey" | translate }}</a>
+    </li>
+    <li>
+      <a routerLink="high-volume-scanning">{{
+        "high-volume-scanning" | translate
+      }}</a>
+    </li>
+    <li>
+      <a>{{ "linkOrdersKey" | translate }}</a>
+    </li>
+    <li>
+      <a>{{ "linkSuppliersKey" | translate }}</a>
+    </li>
+    <li>
+      <a>{{ "linkCustomersKey" | translate }}</a>
+    </li>
+    <li>
+      <a>{{ "linkReportsKey" | translate }}</a>
+    </li>
+    <li>
+      <a tabindex="0" class="p-trigger">
+        <i class="pi pi-search"></i>
+      </a>
+    </li>
+    <li class="profile-item static sm:relative">
+      <div class="relative inline-block text-left hidden lg:block ml-2">
+        <p-avatar
+          icon="pi pi-user"
+          [style]="{ 'background-color': '#3d85c6' }"
+          class="text-white cursor-pointer"
+          shape="circle"
+          aria-expanded="true"
+          aria-haspopup="true"
+          (click)="showLanguageOption()"
+        ></p-avatar>
+        @if (!isLanguageOptionsHide) {
+        <div
+          style="background: rgba(17, 24, 39, 0.8)"
+          class="absolute right-0 z-10 origin-top-right rounded-md bg-white shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none text-white px-5 py-3 rounded-md text-center bg-gray-900 mt-3"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="menu-button"
+          tabindex="-1"
+        >
+          <div class="py-1" role="none">
+            <a
+              pRipple
+              class="flex p-2 border-round align-items-center hover:surface-hover transition-colors transition-duration-150 cursor-pointer"
+              (click)="toggleLanguage()"
+            >
+              <i class="pi pi-language mr-3"></i>
+              <span class="flex flex-column">
+                <span class="font-semibold">{{
+                  "linkLanguageKey" | translate
+                }}</span>
+              </span>
+            </a>
+            <a
+              pRipple
+              class="flex p-2 border-round align-items-center hover:surface-hover transition-colors transition-duration-150 cursor-pointer"
+              (click)="onLogoutClick()"
+            >
+              <i class="pi pi-power-off mr-3"></i>
+              <span class="flex flex-column">
+                <span class="font-semibold">{{ "logoutKey" | translate }}</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        }
+      </div>
+    </li>
+  </ul>
+</nav>
+<p-toast></p-toast>

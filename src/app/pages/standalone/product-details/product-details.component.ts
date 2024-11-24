@@ -5,7 +5,8 @@ import { CardModule } from 'primeng/card';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { Product } from '../../../Models/product';
 import { DropdownModule } from 'primeng/dropdown';
-import { ProductService } from '../../../product-list/product.service';
+import { ProductService } from '../product-list/product.service';
+// import { ProductService } from '../../../product-list/product.service';
 
 @Component({
   selector: 'app-product-details',

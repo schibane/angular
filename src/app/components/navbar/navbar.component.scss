@@ -1,0 +1,50 @@
+body {
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 700;
+}
+
+.container {
+  background-color: cornflowerblue;
+  height: 700px;
+}
+
+nav {
+  height: 65px;
+  background: #366aad;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 1px;
+
+  color: #dee2e6;
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  padding: 0 !important;
+}
+
+li a {
+  color: white;
+}
+li a.selected {
+  color: red; /* Selected color */
+  font-weight: bold;
+}
+.push-left {
+  margin-right: auto;
+}
+
+.profile-image {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+}
