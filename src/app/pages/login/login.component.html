@@ -1,0 +1,86 @@
+<div
+  class="relative min-h-screen flex items-center justify-center bg-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center"
+  style="background-image: url(assets/images/login-bg.jpeg)"
+>
+  <div class="absolute bg-black opacity-30 inset-0 z-0"></div>
+  <div
+    class="max-w-md w-full space-y-8 p-6 bg-white rounded-2xl shadow-lg z-10"
+  >
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img
+          class="mx-auto h-10 w-auto"
+          src="assets/images/logo-full-style1.png"
+          alt="Gildan"
+        />
+        <h2
+          class="mt-10 text-center text-xl font-bold leading-8 tracking-tight text-gray-900"
+        >
+          {{ "LoginTitle" | translate }}
+        </h2>
+      </div>
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div class="space-y-6">
+          <div class="mt-2">
+            <input
+              placeholder="{{ 'Username' | translate }}"
+              [(ngModel)]="usernameValue"
+              type="text"
+              autocomplete="false"
+              class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 sm:text-sm sm:leading-6"
+              [disabled]="isLoginLoading"
+              (keyup.enter)="onUserNameEnter()"
+            />
+          </div>
+          <div class="mt-2">
+            <div class="relative">
+              <input
+                placeholder="{{ 'Password' | translate }}"
+                [(ngModel)]="passwordValue"
+                [type]="showPwd ? 'password' : 'text'"
+                class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 sm:text-sm sm:leading-6"
+                [disabled]="isLoginLoading"
+                (keyup.enter)="login()"
+              />
+              <div
+                class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+              >
+                <i
+                  [ngClass]="showPwd ? 'pi pi-eye' : 'pi pi-eye-slash'"
+                  (click)="showPwd = !showPwd"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm"
+              [ngClass]="
+                !usernameValue || !passwordValue ? 'cursor-default' : ''
+              "
+              [ngStyle]="{
+                'background-color':
+                  !usernameValue || !passwordValue ? '#90cdf4' : '#366AAD'
+              }"
+              [disabled]="!usernameValue || !passwordValue || isLoginLoading"
+              (click)="login()"
+            >
+              <app-spiner class="ml-2" [hidden]="!isLoginLoading"></app-spiner
+              >{{ "LoginAction" | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+      <p-toast
+        position="bottom-center"
+        [baseZIndex]="3000"
+        [life]="40000"
+        [showTransformOptions]="'translateY(100%)'"
+        [showTransitionOptions]="'500ms'"
+        [hideTransitionOptions]="'200ms'"
+        [breakpoints]="{ '200px': { width: '100%', right: '0', left: '0' } }"
+      ></p-toast>
+    </div>
+  </div>
+</div>
