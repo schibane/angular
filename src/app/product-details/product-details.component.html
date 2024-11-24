@@ -1,0 +1,41 @@
+<p-card header="Product Details">
+  <ng-template pTemplate="content" [style]="{ width: '560px' }">
+    <img
+      src="{{ product.image }}"
+      [alt]="product.image"
+      width="300"
+      class="mt-0 mx-auto mb-5 block shadow-2"
+      *ngIf="product.image"
+    />
+    <div class="field">
+      <label for="description">Title:</label>
+      <input
+        type="text"
+        id="description"
+        pInputText
+        [(ngModel)]="product.title"
+      />
+    </div>
+    <div class="formgrid grid">
+      <div class="field col">
+        <label for="price">Price:</label>
+        <p-inputNumber
+          id="price"
+          [(ngModel)]="product.price"
+          mode="currency"
+          currency="USD"
+          locale="en-US"
+        ></p-inputNumber>
+      </div>
+      <div class="field col">
+        <label for="quantity">Category:</label>
+        <input
+          type="text"
+          id="quantity"
+          pInputText
+          [(ngModel)]="product.category"
+        />
+      </div>
+    </div>
+  </ng-template>
+</p-card>

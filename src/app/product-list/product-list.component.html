@@ -1,0 +1,22 @@
+<p-table
+  [value]="products"
+  [paginator]="true"
+  [rows]="5"
+  selectionMode="single"
+>
+  <ng-template pTemplate="caption"><h1>Product List</h1></ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-product>
+    <tr (click)="handleSelect(rowData)">
+      <td>{{ product.title }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.category }}</td>
+    </tr>
+  </ng-template>
+</p-table>
