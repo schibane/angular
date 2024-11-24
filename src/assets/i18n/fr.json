@@ -31,6 +31,7 @@
   "linkCustomersKey": "Clients",
   "linkHomeKey": "Accueil",
   "linkInventoryKey": "Données en masse",
+  "linkStandaloneKey": "Standalone",
   "linkLanguageKey": "English",
   "linkOrdersKey": "Commandes",
   "linkReportsKey": "Rapports",

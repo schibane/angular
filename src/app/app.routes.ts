@@ -20,14 +20,14 @@ export const APP_ROUTES: Routes = [
             (c) => c.StandaloneComponent
           ),
       },
-      // {
-      //   path: 'high-volume-scanning',
-      //   // canActivate: [authGuard],
-      //   loadComponent: () =>
-      //     import(
-      //       '../pages/high-volume-scanning/high-volume-scanning.component'
-      //     ).then((c) => c.HighVolumeScanningComponent),
-      // },
+      {
+        path: 'template-driven-form',
+        // canActivate: [authGuard],
+        loadComponent: () =>
+          import(
+            './pages/template-driven-form/template-driven-form.component'
+          ).then((c) => c.HighVolumeScanningComponent),
+      },
       // {
       //   path: 'asset-search',
       //   // canActivate: [authGuard],

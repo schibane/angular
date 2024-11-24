@@ -31,6 +31,7 @@
   "linkCustomersKey": "Customers",
   "linkHomeKey": "Home",
   "linkInventoryKey": "Bulk Data",
+  "linkStandaloneKey": "Standalone",
   "linkLanguageKey": "Français",
   "linkOrdersKey": "Orders",
   "linkReportsKey": "Reports",
