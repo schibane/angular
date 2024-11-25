@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { ActorFormComponent } from './actor-form/actor-form.component';
 
 @Component({
   selector: 'app-template-driven-form',
   standalone: true,
-  imports: [ActorFormComponent],
+  imports: [ActorFormComponent, TranslateModule],
   templateUrl: './template-driven-form.component.html',
   styleUrl: './template-driven-form.component.css',
 })
