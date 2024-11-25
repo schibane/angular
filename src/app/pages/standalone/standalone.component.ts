@@ -4,7 +4,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-layout',
+  selector: 'app-standalone',
   standalone: true,
   imports: [ProductListComponent, ProductDetailsComponent],
   templateUrl: './standalone.component.html',
