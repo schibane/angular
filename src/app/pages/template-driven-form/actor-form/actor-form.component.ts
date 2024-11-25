@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, FormsModule],
 })
 export class ActorFormComponent {
-  skills = ['Method Acting', 'Singing', 'Dancing', 'Swordfighting'];
+  skills = ['Method Acting', 'Singing', 'Dancing', 'Swordfighting', ''];
   model = new Actor(18, 'Tom Cruise', this.skills[3], 'CW Productions');
   submitted = false;
   onSubmit() {

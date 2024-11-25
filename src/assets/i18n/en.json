@@ -24,6 +24,7 @@
   "categoryKey": "Category",
   "codeKey": "Code",
   "clearKey": "Clear",
+  "formsKey": "Forms",
   "templateDrivenFormKey": "template driven form",
   "descriptionKey": "Description",
   "endTimestampKey": "Ending Timestamp",

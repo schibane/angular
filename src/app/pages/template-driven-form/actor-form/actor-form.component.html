@@ -37,15 +37,13 @@
           [(ngModel)]="model.skill"
           name="skill"
           #skill="ngModel"
+          [ngClass]="{ 'is-invalid': skill.errors }"
         >
           <option *ngFor="let skill of skills" [value]="skill">
             {{ skill }}
           </option>
         </select>
-        <div
-          [hidden]="skill.valid || skill.pristine"
-          class="alert alert-danger"
-        >
+        <div [hidden]="skill.valid || skill.pristine" class="text-danger">
           skill is required
         </div>
       </div>
