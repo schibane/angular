@@ -3,11 +3,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ActorFormComponent } from './actor-form/actor-form.component';
 
 @Component({
-  selector: 'app-template-driven-form',
+  selector: 'app-forms',
   standalone: true,
   imports: [ActorFormComponent, TranslateModule],
-  templateUrl: './template-driven-form.component.html',
-  styleUrl: './template-driven-form.component.css',
+  templateUrl: './forms.component.html',
+  styleUrl: './forms.component.css',
 })
 export class TemplateDrivenFormComponent {
   // private readonly availableLanguages = ['en', 'fr'];

@@ -24,9 +24,9 @@ export const APP_ROUTES: Routes = [
         path: 'forms',
         // canActivate: [authGuard],
         loadComponent: () =>
-          import(
-            './pages/template-driven-form/template-driven-form.component'
-          ).then((c) => c.TemplateDrivenFormComponent),
+          import('./pages/forms/forms.component').then(
+            (c) => c.TemplateDrivenFormComponent
+          ),
       },
       // {
       //   path: 'asset-search',
