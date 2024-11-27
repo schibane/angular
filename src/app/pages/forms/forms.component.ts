@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ActorFormComponent } from './actor-form/actor-form.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [ActorFormComponent, TranslateModule],
+  imports: [TranslateModule, ActorFormComponent, UserFormComponent],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css',
 })
