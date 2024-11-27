@@ -21,7 +21,7 @@ export const APP_ROUTES: Routes = [
           ),
       },
       {
-        path: 'template-driven-form',
+        path: 'forms',
         // canActivate: [authGuard],
         loadComponent: () =>
           import(
