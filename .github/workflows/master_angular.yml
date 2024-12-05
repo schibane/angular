@@ -49,5 +49,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: "angular"
-          publish-profile: $
+          slot-name: "Production"
           package: ./dist/angular
