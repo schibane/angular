@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${ { env.NODE_VERSION } }
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${ { env.NODE_VERSION } }
+          node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
           cache-dependency-path: package-lock.json
 
@@ -65,4 +65,4 @@ jobs:
           app-name: "angular4said"
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_68FBC891E72E440AACE17A41243D260D }}
-          package: ${ { env.AZURE_WEBAPP_PACKAGE_PATH  } }
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
