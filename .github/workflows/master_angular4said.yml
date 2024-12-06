@@ -30,8 +30,9 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          cd dist
+          cd dist/angular/browser
           zip release.zip ./* -r
+          mv release.zip ../../
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
